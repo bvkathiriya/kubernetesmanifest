@@ -16,7 +16,7 @@ node {
                         sh "git config user.name bvkathiriya"
                         //sh "git switch master"
                         sh "cat wordpress-deployment.yaml"
-                        sh "sed -i 'kathiriya007/wordpress.*+kathiriya007/wordpress:${DOCKERTAG}+g' wordpress-deployment.yaml"
+                        sh "sed -i 's+kathiriya007/wordpress.*+kathiriya007/wordpress:${DOCKERTAG}+g' wordpress-deployment.yaml"
                         sh "cat wordpress-deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
